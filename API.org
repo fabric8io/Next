@@ -1,0 +1,36 @@
+* REST API spec
+
+** Build API flow
+
+   1. Launcher queries the build API for list of pipelines
+   2. User uses the launcher UI to select one of the pipelines
+   3. Launcher generates the DSL (OSIO.yml) with user input and pipeline info
+   4. Launcher uses platform (Code host) API to create a repo with this DSL
+   5. Build listens for the event from Platform and registers a new Pipeline.
+   6. The launcher starts the Pipeline after creation (No user action required)
+   7. We *actually* start the build :tada::tada:
+   8. Notify platform (Post back to platform maybe)
+   9. Users query build for live updates with some streaming API (logs and
+      eventually status)
+
+** Sample API flow for a quick start workflow
+
+*** Pipeline API
+
+    | URL             | /pipeline             |
+    |-----------------+-----------------------|
+    | Functionalities | CRUD, Register, Start |
+
+
+*** Build API
+
+    | URL             | /job                                   |
+    |-----------------+----------------------------------------|
+    | Functionalities | CRUD, (Re)Start, Stop, Status, Watch   |
+    | Read            | Usual bits, artifacts, link to log etc |
+    |                 |                                        |
+
+** Implementation details we all agree
+
+   1. We build this API and make it work with the existing build
+   2. Go! :tada:
