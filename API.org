@@ -1,6 +1,6 @@
-* REST API spec
+* API Specifications
 
-** Build API flow
+** Fundamentals: Starting any new pipeline build
 
    1. Launcher queries the build API for list of pipelines
    2. User uses the launcher UI to select one of the pipelines
