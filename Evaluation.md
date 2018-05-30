@@ -120,7 +120,12 @@ Travis, Semaphore.
     Is it configurable? We might need to send logs to a Gluster PV and other
     insights to PostgreSQL for example.
 
-11. The usual engineering sanity bits.
+11. How extensible is the project?
+
+    If we have changes that we cannot get upstream, will it be possible to
+    extend the service with plugins?
+
+12. The usual engineering sanity bits.
 
     1. What sort of APIs does the tool expose?
     2. Are there enough tests?
