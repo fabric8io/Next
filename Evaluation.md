@@ -6,7 +6,7 @@ anything and I'll act on it._
 
 We need a set of parameters and critereon to evaluate each of the canidates in
 an unbiased way. I'm hoping to come up with a minimal list in _at least_ 3
-categories - **Build**, **Orchestration**, **Deploy**. The goal is to answer the
+categories - **Integration**, **Orchestration**, **Deploy**. The goal is to answer the
 same set of questions per tool so that the final comparison is easy and unless
 we split the roles, we will never find a solution that really fits our needs in
 all verticals.
@@ -43,9 +43,9 @@ The major goals are,
 
 3. Anything else that might make sense like load balancing, rate limiting etc
 
-#### Build
+#### Integration
 
-In the simplest sense, build converts source to artifacts. We could think of it
+In the simplest sense, integration converts source to artifacts as part of a continuous cycle. In some cases this will be handled differently than the "local build" a developer would do as part of developing their code pre-commit / pre-PR. We could think of it
 as series of commands to execute on the source to get a docker image, jar or a
 tarball. Users could optionally run their tests before or after artifact
 creation.
