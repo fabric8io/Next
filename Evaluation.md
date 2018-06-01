@@ -23,10 +23,10 @@ start with that.
 
 This will be something of our own, so there is no need for an evaluation per se.
 
-This service will act as a cushion b/w the services and rest of osio. The reason
-to have it here as the first section is serve as a reminder that a service we
-own is available b/w the service and osio to do some necessary translations if
-necessary. This _might_ make working with certain tools (eg; a good build
+This service will act as a facade for the build services and rest of osio. The
+reason to have it here as the first section is serve as a reminder that a
+service we own is available b/w the service and osio to do some necessary
+translations. This _might_ make working with certain tools (e.g. a good build
 service with an odd auth mechanism) much easier.
 
 The major goals are,
@@ -37,9 +37,9 @@ The major goals are,
    the API same while changing provider implementations etc (current jenkins ->
    something new and sane).
 
-2. RBAC. It might be easier to handle authentication and authorization in a
-   consistent fashion at the API g/w than make each service understand the osio
-   way of doing things.
+2. Role Based Access Control (RBAC). It might be easier to handle authentication
+   and authorization in a consistent fashion at the API gateway than make each
+   service understand the osio way of doing things.
 
 3. Anything else that might make sense like load balancing, rate limiting etc
 
@@ -106,9 +106,10 @@ Travis, Semaphore.
    more of a usability/sanity testing against the service to discover a lot of
    obvious flaws.
 
-   1. Understand the requirements in terms of CPU, memory, IO, time etc and make
-      sure your tool can build a sufficiently large app. We could start with our
-      own quick starts obviously.
+   1. Understand the requirements in terms of CPU, memory, IO, time etc the
+      service needs & make sure your tool can build a sufficiently large app.
+      This is important because Jenkins fails to build maven apps quite often
+      under memory load.
 
    2. Use secrets from previous step and push to a private registry
 
